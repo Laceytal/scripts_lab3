@@ -83,6 +83,7 @@ async function sendPost(title, body) {
             "ok"
         );
         postForm.reset();
+        feed.prepend(buildCard(created));
     } catch (err) {
         showMessage(sendStatus, `Не удалось опубликовать. ${err.message}`, "err");
     } finally {
